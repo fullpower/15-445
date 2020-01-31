@@ -1,6 +1,6 @@
 WITH RECURSIVE
   split(genre, rest) AS (
-    SELECT '', genres || ',' FROM titles WHERE genres != "\N"
+    SELECT '', genres || ',' FROM titles
     UNION ALL
 	SELECT substr(rest, 0, instr(rest, ',')),
            substr(rest, instr(rest, ',') + 1)

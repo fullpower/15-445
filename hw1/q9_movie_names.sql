@@ -1,7 +1,7 @@
 WITH castboth (title_id) AS (
 SELECT title_id
   FROM crew
-  WHERE person_id in (
+  WHERE person_id IN (
 	SELECT person_id
 	  FROM people
 	  WHERE (name == "Mark Hamill" and born == 1951)
@@ -9,7 +9,7 @@ SELECT title_id
 INTERSECT
 SELECT title_id
   FROM crew
-  WHERE person_id in (
+  WHERE person_id IN (
     SELECT person_id
     FROM people
     WHERE (name == "George Lucas" and born == 1944)
